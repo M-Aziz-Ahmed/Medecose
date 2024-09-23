@@ -16,11 +16,12 @@
 
 <body class="body">
     <nav class="nav navbar bg-white sticky-top">
-        <div class="container-fluid px-5 p-2">
+        <div class="container-fluid px-5">
             <div class="d-flex justify-content-between w-100 align-items-center">
-                <div class="logo">
-                    <a href="{% url 'home' %}">
-                        <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+                <div class="logo align-items-center d-flex">
+                    <a href="{% url 'home' %}" class='nav-link'>
+                        {% comment %} <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo"> {% endcomment %}
+                         Logo Here
                     </a>
                 </div>
                 <div class="nav-links d-flex">
@@ -44,11 +45,12 @@
                     <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none;">
                         {% csrf_token %}
                     </form>
-
-                    <a href="#" class="nav-link"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Logout
-                    </a>
+                    <div class='nav-item'>
+                        <a href="#" class="nav-link"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                    </div>
                     {% else %}
                     <div class="nav-item">
                         <a href="{% url 'register' %}" class="nav-link">Sign Up</a>

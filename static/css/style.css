@@ -43,7 +43,7 @@
   background-color: black;
   opacity: 0.5;
 }
-.nav-link:hover{
+.nav-links > .nav-item>.nav-link:hover{
   border-bottom: 1px lightblue solid;
 }
 .cart{
