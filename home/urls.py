@@ -1,21 +1,19 @@
 from django.urls import path
-from .views import CustomLoginView
-from . import views
-# from .views import admin_orders
+from .views import home, register, verify_email, contact, success, product, cart, add_to_cart, remove_from_cart, cod, confirm_order, search_view, user_orders, CustomLoginView
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('register/', views.register, name='register'),
-    path('contact/', views.contact, name='contact'),
-    path('success/', views.success, name='success'),
-    path('orders/', views.user_orders, name='user_orders'),
-    # path('admin/orders/', admin_orders, name='admin_orders'),
-    path('product/<int:post_id>/', views.product, name='product'),
-    path('cart/', views.cart, name='cart'),
-    path('cart/add/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
-    path('cart/remove/<int:product_id>/', views.remove_from_cart, name='remove_from_cart'),
-    path('cod/', views.cod, name='cod'),  # Add this line
-    path('confirm_order/', views.confirm_order, name='confirm_order'),
-    path('search/', views.search_view, name='search'),
-    path('login/', CustomLoginView.as_view(), name='login')
+    path('', home, name='home'),
+    path('register/', register, name='register'),
+    path('verify_email/', verify_email, name='verify_email'),
+    path('contact/', contact, name='contact'),
+    path('success/', success, name='success'),
+    path('product/<int:post_id>/', product, name='product'),
+    path('cart/', cart, name='cart'),
+    path('add_to_cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
+    path('remove_from_cart/<int:product_id>/', remove_from_cart, name='remove_from_cart'),
+    path('cod/', cod, name='cod'),
+    path('confirm_order/', confirm_order, name='confirm_order'),
+    path('search/', search_view, name='search'),
+    path('user_orders/', user_orders, name='user_orders'),
+    path('login/', CustomLoginView.as_view(), name='login'),
 ]

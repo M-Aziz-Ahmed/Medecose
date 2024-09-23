@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<div class="w-100">
+  <main class="form-signin w-50 m-auto mt-5 p-5 bg-white card my-5">
+    <h1 class="my-3 text-center">Verify Email</h1>
+    
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="code">Verification Code</label>
+        <input type="text" name="code" required class="form-control" id="code">
+      </div>
+      <div class="w-100 text-center">
+        <button type="submit" class="btn btn-primary w-25 py-2 my-5">Verify</button>
+      </div>
+    </form>
+    
+  </main>
+</div>
+{% endblock body %}
